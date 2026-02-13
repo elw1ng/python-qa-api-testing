@@ -1,0 +1,8 @@
+Bug ID: BUG-001
+Title: GET /posts/{id} returns 200 for non-existing post
+Steps to Reproduce:
+1. Send GET request to /posts/999999
+2. Observe response
+Expected Result: 404 Not Found
+Actual Result: 200 OK
+Status: Open
