@@ -1,3 +1,5 @@
+import pytest
+
 def test_get_post_status_code(client):
     response = client.get_post(1)
 
@@ -34,3 +36,15 @@ def test_non_existing_post(client):
     data = response.json()
     # перевірка статус-коду
     assert data == {} or data is None
+
+@pytest.mark.parametrize(
+    "post_id,expected_status_code",
+    [
+        (999999, 404), 
+        (1, 200),
+        (4,200)
+    ]
+)
+def test_post_status_codes(client, post_id, expected_status_code):
+    response = client.get_post(post_id)
+    assert response.status_code == expected_status_code
