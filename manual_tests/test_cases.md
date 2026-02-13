@@ -17,7 +17,7 @@ Status code is 200
 ---
 
 ## TC-API-002
-Title: Verify response contains required fields
+Title: Verify returned id matches requested id
 
 Preconditions:
 API server is available
@@ -26,11 +26,7 @@ Steps:
 1. Send GET request to /posts/1
 
 Expected Result:
-Response contains fields:
-- userId
-- id
-- title
-- body
+Response field "id" equals 1
 
 ---
 
@@ -52,7 +48,7 @@ Expected Result:
 ---
 
 ## TC-API-004
-Title: Verify returned id matches requested id
+Title: Verify response contains required fields
 
 Preconditions:
 API server is available
@@ -61,7 +57,12 @@ Steps:
 1. Send GET request to /posts/1
 
 Expected Result:
-Response field "id" equals 1
+Response contains fields:
+- userId
+- id
+- title
+- body
+
 
 ---
 
